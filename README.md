@@ -24,3 +24,34 @@ Additional considerations:
     -   What needs to live in a persistence layer?
 -   Is there some state we need to initialize?
 -   Ask: should any of this work be abstracted into functions? (i.e., is the work complicated? can it be reused?)
+
+# DATA MODEL
+
+-Shopping List Items- (What we create in Supabase -tables-)
+-ID
+-created_at
+-item
+-quantity
+-completed
+-user_id (Needed in order to use RLS rules to restrict who can CRUD on the shopping list item/table)
+
+# AUTH PAGE
+
+-form
+-input type for email and password
+-button to submit
+-redirect if not logged in
+
+# SHOPPING LIST PAGE
+
+1. On submit user should be able to add an item
+   -get form data in submit listener
+   -How?
+   -formEl.addeventlistener('submit', async (e) => {
+   e.preventdefault();
+   })
+   -const data = new Formdata(myFormEl);
+   -data.get('object');
+   -We use the form data to send the data to Supabase to create and store a new item.
+
+2. On load - Fetch, render and append the items created from the table in Supabase by user account. (Items only show up based off of user account log in)

@@ -71,7 +71,7 @@ authForm.addEventListener('submit', async (e) => {
 
 /* Display Functions */
 
-function displayAuth() {
+export function displayAuth() {
     // set the text display on the header, button, and change type link
     if (isSignIn) {
         authHeader.textContent = 'Sign in to your account';

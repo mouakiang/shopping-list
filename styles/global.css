@@ -69,3 +69,8 @@ main {
 .hidden {
     display: none;
 }
+
+.auth-container {
+    display: flex;
+    justify-content: center;
+}
