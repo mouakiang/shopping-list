@@ -30,3 +30,22 @@ export async function createList() {
     ]);
     return data;
 }
+export async function getList() {
+    const { data, error } = await client.from('item-list').select('*');
+    return data;
+}
+
+export async function redirect() {
+    const user = getUser();
+    if (user) {
+        location.replace('./todos');
+    }
+}
+
+export async function checkAuth() {
+    const user = getUser();
+
+    if (!user) {
+        location.replace('./auth');
+    }
+}
