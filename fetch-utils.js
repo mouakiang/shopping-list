@@ -22,12 +22,8 @@ export async function signOutUser() {
 }
 
 /* Data functions */
-export async function createList() {
-    const { data, error } = await client.from('item-list').insert([
-        {
-            todo,
-        },
-    ]);
+export async function createList(item) {
+    const { data, error } = await client.from('item-list').insert([item]);
     return data;
 }
 export async function getList() {
@@ -48,4 +44,9 @@ export async function checkAuth() {
     if (!user) {
         location.replace('./auth');
     }
+}
+export async function completeList(id) {
+    const { data, error } = await client.from('item-list').update({ completed: true }).eq('id', id);
+
+    return data;
 }
