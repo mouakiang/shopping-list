@@ -1,7 +1,14 @@
 /* Imports */
 // this will check if we have a user and set sign out link if it exists
 
-import { checkAuth, completeList, createList, deleteList, getList } from './fetch-utils.js';
+import {
+    checkAuth,
+    completeList,
+    createList,
+    deleteList,
+    getList,
+    signOutUser,
+} from './fetch-utils.js';
 import { renderList } from './render-utils.js';
 // import { displayAuth } from './auth.js';
 
@@ -51,3 +58,10 @@ deleteButton.addEventListener('click', async () => {
     await deleteList();
     displayList();
 });
+
+const signOutLink = document.getElementById('sign-out-link');
+if (signOutLink) {
+    signOutLink.addEventListener('click', () => {
+        signOutUser();
+    });
+}
