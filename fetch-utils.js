@@ -50,3 +50,9 @@ export async function completeList(id) {
 
     return data;
 }
+
+export async function deleteList() {
+    const response = await client.from('item-list').delete().match({ user_id: getUser().id });
+
+    return response.data;
+}
