@@ -51,6 +51,7 @@ body {
 
 main {
     padding: 20px;
+    background-image: url(../assets/superstore.jpg);
 }
 
 .avatar {
@@ -77,4 +78,32 @@ main {
 
 .complete {
     text-decoration: line-through;
+}
+
+.delete-button {
+    background-color: rgb(51, 45, 223);
+    color: white;
+    display: block;
+    margin: 0 auto;
+}
+
+.button {
+    color: white;
+    background-color: rgb(51, 45, 223);
+}
+
+.input-form {
+    padding: 10px;
+    text-align: center;
+}
+
+p {
+    display: flex;
+    justify-content: center;
+    color: rgb(250, 250, 250);
+}
+
+.bg-image {
+    height: 100%;
+    background-color: rgba(100, 100, 100, 0.5);
 }
